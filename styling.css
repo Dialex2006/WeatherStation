@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background:  #999;
+    background:  #f5f3fc;
+    color: #000;
+    margin: 0;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1px;
+} 
+
+button {
+    margin-left: 0px;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(109, 189, 230);
+    border-radius: 18px 4px;
+    border: 1px solid  rgb(5, 111, 182);
+}
+
+button:hover {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.24), 4px 4px 4px 0 rgba(0,0,0,0.19);
+    cursor:pointer;
+}
+
+button:focus {outline:0;}
+
+button:active {
+    transform:translate(1px, 1px);
+}
+
+
+
+#graph2 {
+    width: 50%;
+}
+
+h1 {
+    font-size: 40px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    display: inline-block;
+    width: 40%;
+    color: #36304a;
+}
+
+.options {
+    display: inline-block;
+    width: 15%;
+}
+
+
+
+.column1 {
+    width : 230px;
+    display: inline-block;
+}
+
+.column2 {
+    width : 75px;
+    display: inline-block;
+}
+
+.column3 {
+    width : 90px;
+    display: inline-block;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+table, td {
+    border: 0px solid black;
+    padding: 10px 20px 10px 20px;
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#table2 {
+    width: 100%;
+}
+
+#table3 {
+    width: 100%;
+}
+
+#table4 {
+    width: 100%;
+}
+
+
+tbody tr {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+    text-align: center;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #eeeeee;
+}
+
+.table2 tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+th {
+    text-align: center;
+    background-color: #36304a;
+    height: 40px;
+    color: white;
+    border: 0px solid black;
+}
+
+#col1 {
+    width: 7%;
+}
+
+#col2 {
+    width: 20%;
+}
+
+#col3 {
+    width: 20%;
+}
+
+#col4 {
+    width: 25%;
+}
+
+#col5 {
+    width: 15%;
+}
+
+#td-col1 {
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    grid-gap: 2em;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.View1 {
+    height: 147px;
+    background: linear-gradient(90deg, #e78952,  #cf5112);
+    font-size: 150px;
+}
+
+.View2 {
+    height: 147px;
+    background: linear-gradient(90deg, #29e989,  #cf5112);
+    font-size: 150px;
+}
+
+.tabs {
+    background:  #36304a;
+    color: white;
+    padding: 4px 16px;
+    font-size: 20px;
+    outline: none;
+    height: 40px;
+    border: none;
+    width: 90%;
+}
+
+.content {
+    display: none;
+    padding: 20px 20px;
+}
+
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+
+.flex-container2 {
+    display: flex;
+    width: 100%;
+}
+
+.graphs {
+    width: 70%;
+}
+
+
+
+
+.dropbtn, .drop2btn, .drop3btn, .drop4btn {
+    padding-top: 0px;
+    width: 180px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid  rgb(20, 73, 109);
+    background-color: #166da7;
+    color: white;
+    padding: 0px 0px 0px 0px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+  
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.drop2btn:hover, .drop2btn:focus {
+    background-color: #2980B9;
+}
+  
+.dropdown, .dropdown2, .dropdown3, .dropdown4 {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.dropdown-content, .dropdown-content2, .dropdown-content3, .dropdown-content4 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 180px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+  
+.dropdown-content a, .dropdown-content2 a, .dropdown-content3 a, .dropdown-content4 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+  
+.dropdown a:hover {background-color: #ddd;}
+
+.dropdown2 a:hover {background-color: #ddd;}
+  
+.show {display: block;}
+
+
+#myDropdown, #myDropdown2, #myDropdown3, #myDropdown4 {
+    position: absolute;
+}
+
+.dropdown a {
+}
+
+.dropdown2 a {
+}
+
+#livebutton {
+    padding-top: 0px;
+    width: 180px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid  rgb(20, 73, 109);
+    background-color: #166da7;
+    color: white;
+    padding: 0px 0px 0px 0px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}

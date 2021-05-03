@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course assignment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.0.2/echarts.min.js" integrity="sha512-t9GZbGKCH5MuYUFsq5AdrhllT0kdnc2fNMizKDgLXBBXgHP2dXxjRPOzYJauAXW9OXLlSYELUqWD30k7cb0Mkg==" crossorigin="anonymous"></script>
+    <script src="functionality.js" defer></script>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    
+    <!-- Tabs -->
+    <div class="wrapper">
+        <button class="tabs" onclick="openTab('Tab1')" id="defaultOpen">
+            Latest 50
+        </button>
+
+        <button class="tabs" onclick="openTab('Tab2')">
+            Temperature
+        </button>
+
+        <button class="tabs" onclick="openTab('Tab3')">
+            Wind speed
+        </button>
+
+        <button class="tabs" onclick="openTab('Tab4')">
+            Other measurements
+        </button>
+
+        <button class="tabs" onclick="openTab('Tab5')">
+            Current data
+        </button>
+    </div>
+
+    
+
+    <!-- First view -->
+    <div id="Tab1" class="content">
+        <h2>
+            Latest 50 measurements
+        </h2>
+
+        <hr>
+        <br>
+        
+        <div id="table"></div>
+
+    </div>
+
+
+
+    <!-- Second view -->
+    <div id="Tab2" class="content">
+        <h2>
+            Temperature
+        </h2>
+
+
+        <div class="dropdown">
+            <button onclick="dropMenu()" class="dropbtn"><span id="buttonName">Select period</span></button>
+            <div id="myDropdown" class="dropdown-content">
+              <a class="option" href="#" onclick="getData(2, 1, 1)">Now</a>
+              <a class="option" href="#" onclick="getData(2, 1, 2)">24 hours</a>
+              <a class="option" href="#" onclick="getData(2, 1, 3)">48 hours</a>
+              <a class="option" href="#" onclick="getData(2, 1, 4)">72 hours</a>
+              <a class="option" href="#" onclick="getData(2, 1, 5)">1 week</a>
+              <a class="option" href="#" onclick="getData(2, 1, 6)">1 month</a>
+            </div>
+        </div>
+
+        <hr>
+        <br>
+
+        <div class="flex-container">
+            <div id="graph2" style="width:100%; height:600px;"></div>
+            <div id="table2"></div>
+        </div>
+    
+        
+    </div>
+    
+
+    <!-- Third view -->
+    <div id="Tab3" class="content">
+        <h2>
+            Wind speed
+        </h2>
+
+    
+        <div class="dropdown2">
+            <button onclick="dropMenu2()" class="drop2btn"><span id="button2Name">Select period</span></button>
+            <div id="myDropdown2" class="dropdown-content2">
+            <a class="option2" href="#" onclick="getData(3, 2, 1)">Now</a>
+            <a class="option2" href="#" onclick="getData(3, 2, 2)">24 hours</a>
+            <a class="option2" href="#" onclick="getData(3, 2, 3)">48 hours</a>
+            <a class="option2" href="#" onclick="getData(3, 2, 4)">72 hours</a>
+            <a class="option2" href="#" onclick="getData(3, 2, 5)">1 week</a>
+            <a class="option2" href="#" onclick="getData(3, 2, 6)">1 month</a>
+            </div>
+        </div>
+
+           
+        <hr>
+        <br>
+
+        <div class="flex-container">
+            <div id="graph3" style="width:100%; height:600px;"></div>
+            <div id="table3"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Fourth view -->
+    <div id="Tab4" class="content">
+            <h2 id="tab4Name">
+                Other measurements
+            </h2>
+    
+            <div class="dropdown3">
+                <button onclick="dropMenu3()" class="drop3btn"><span id="button3Name">Select measurement</span></button>
+                <div id="myDropdown3" class="dropdown-content3">
+                    <a class="option3" href="#" onclick="getData(4, 1, 0)">Temperature</a>
+                    <a class="option3" href="#" onclick="getData(4, 2, 0)">Wind speed</a>
+                    <a class="option3" href="#" onclick="getData(4, 3, 0)">Wind direction</a>
+                    <a class="option3" href="#" onclick="getData(4, 4, 0)">Rain</a>
+                    <a class="option3" href="#" onclick="getData(4, 5, 0)">Light</a>
+                </div>
+            </div>
+
+            <div class="dropdown4">
+                <button onclick="dropMenu4()" class="drop4btn"><span id="button4Name">Select period</span></button>
+                <div id="myDropdown4" class="dropdown-content4">
+                    <a class="option4" href="#" onclick="getData(4, 0, 1)">Now</a>
+                    <a class="option4" href="#" onclick="getData(4, 0, 2)">24 hours</a>
+                    <a class="option4" href="#" onclick="getData(4, 0, 3)">48 hours</a>
+                    <a class="option4" href="#" onclick="getData(4, 0, 4)">72 hours</a>
+                    <a class="option4" href="#" onclick="getData(4, 0, 5)">1 week</a>
+                    <a class="option4" href="#" onclick="getData(4, 0, 6)">1 month</a>
+                </div>
+            </div>
+    
+               
+            <hr>
+            <br>
+    
+            <div class="flex-container">
+                <div id="graph4" style="width:100%; height:600px;"></div>
+                <div id="table4"></div>
+            </div>
+    </div>
+
+
+    <!-- Fifth view -->
+    <div id="Tab5" class="content">
+        <h2>
+            Average values based on 5 latest measurements
+        </h2>
+
+        <button id="livebutton" onclick="livedata()">Live update (ON)</button>
+
+        <hr>
+        <div class="flex-container2">
+            <div id="graph5" style="width:24%; height:350px;"></div>
+            <div id="graph6" style="width:24%; height:350px;"></div>
+            <div id="graph7" style="width:24%; height:350px;"></div>
+            <div id="graph8" style="width:24%; height:350px;"></div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>
